@@ -9,10 +9,10 @@ target/
 .settings/
 .project
 .classpath
-
+*.txt
 # Logs
 *.log
-
+*.asc
 # OS metadata
 .DS_Store
 Thumbs.db
