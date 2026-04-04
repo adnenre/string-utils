@@ -109,8 +109,8 @@
       </plugins>
     </pluginManagement>
 
-    <!-- ===== ADDED: Required plugins for Maven Central ===== -->
     <plugins>
+      <!-- Generate sources JAR -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
@@ -125,6 +125,7 @@
         </executions>
       </plugin>
 
+      <!-- Generate Javadoc JAR -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
@@ -139,6 +140,7 @@
         </executions>
       </plugin>
 
+      <!-- GPG signing -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-gpg-plugin</artifactId>
@@ -153,15 +155,17 @@
           </execution>
         </executions>
       </plugin>
+
+      <!-- Sonatype Central Publishing Plugin (new) -->
+      <plugin>
+        <groupId>org.sonatype.central</groupId>
+        <artifactId>central-publishing-maven-plugin</artifactId>
+        <version>0.4.0</version>
+        <extensions>true</extensions>
+        <configuration>
+          <publishingServerId>central</publishingServerId>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
-
-  <!-- ===== ADDED: Distribution management for Maven Central ===== -->
-  <distributionManagement>
-    <repository>
-      <id>central</id>
-      <url>https://central.sonatype.com/api/v1/publisher/</url>
-    </repository>
-  </distributionManagement>
-
 </project>
