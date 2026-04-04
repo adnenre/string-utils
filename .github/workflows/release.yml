@@ -3,6 +3,7 @@ name: Publish to Maven Central
 on:
   release:
     types: [published]
+  workflow_dispatch: # Allows manual trigger from Actions tab
 
 jobs:
   publish:
