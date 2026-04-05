@@ -998,6 +998,7 @@ public final class StringUtils {
      * adding "..." if truncated.
      * <p>
      * Behavior details:
+     * </p>
      * <ul>
      * <li>If {@code str} is {@code null}, returns {@code null}.</li>
      * <li>If {@code maxWidth} (number of removed characters) is less than 1:
@@ -1011,9 +1012,11 @@ public final class StringUtils {
      * and appends {@code "..."}.</li>
      * <li>Ensures at least one character remains before adding {@code "..."}.</li>
      * </ul>
-     * </p>
+     * 
+     * 
      * <p>
      * Examples:
+     * </p>
      * 
      * <pre>
      * abbreviate("abcdefghijk", 6) → "abcde..."
@@ -1022,7 +1025,7 @@ public final class StringUtils {
      * abbreviate("abc", 3)         → "a..."
      * abbreviate("abcdef", 0)      → "abcdef"
      * </pre>
-     * </p>
+     * 
      * 
      * @param str      the string to abbreviate (may be {@code null})
      * @param maxWidth the number of characters to remove from the end (must be ≥ 1)
